@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background_light">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Title Section -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đặt Phòng"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:textColor="@color/green_text_dark"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Card 1: Thông tin đăng kí & Thông tin loại phòng -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_booking_room_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin đặt phòng và loại phòng"
+                    android:textColor="@color/green_text_dark"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <!-- Left Column: Booking Details -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loại phòng:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <Spinner
+                            android:id="@+id/spinner_room_type_booking"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/spinner_background_green"
+                            android:paddingVertical="8dp"
+                            android:layout_marginBottom="12dp"
+                            android:entries="@array/room_types"/> <!-- Reusing for demo -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Số đêm:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <EditText
+                            android:id="@+id/edt_num_nights"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:background="@drawable/edittext_border_green"
+                            android:layout_marginBottom="12dp"
+                            tools:text="1"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ngày nhận:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <LinearLayout
+                            android:id="@+id/layout_check_in_date_booking"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/edittext_border_green"
+                            android:paddingVertical="8dp"
+                            android:layout_marginBottom="12dp">
+                            <TextView
+                                android:id="@+id/tv_check_in_date_booking"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/green_text_dark"
+                                android:textSize="16sp"
+                                android:layout_marginStart="4dp"
+                                tools:text="23/05/2018"/>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/btn_2"
+                                android:contentDescription="Select Check-in Date"
+                                android:layout_marginEnd="4dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ngày trả:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <LinearLayout
+                            android:id="@+id/layout_check_out_date_booking"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/edittext_border_green"
+                            android:paddingVertical="8dp">
+                            <TextView
+                                android:id="@+id/tv_check_out_date_booking"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/green_text_dark"
+                                android:textSize="16sp"
+                                android:layout_marginStart="4dp"
+                                tools:text="24/05/2018"/>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/btn_2"
+                                android:contentDescription="Select Check-out Date"
+                                android:layout_marginEnd="4dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Right Column: Room Type Info (Read-Only) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Số lượng người tối đa:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <EditText
+                            android:id="@+id/edt_max_guests" android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:background="@drawable/edittext_border_green"
+                            android:inputType="number" android:layout_marginBottom="12dp"
+                            tools:text="2"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Giá:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <EditText
+                            android:id="@+id/edt_price" android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:inputType="numberDecimal" android:background="@drawable/edittext_border_green"
+                            tools:text="800000" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2: Tìm kiếm khách hàng -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_search_customer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_booking_room_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tìm kiếm khách hàng"
+                    android:textColor="@color/green_text_dark"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thẻ căn cước / CMND:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edt_customer_id_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="16dp"/>
+
+                <Button
+                    android:id="@+id/btn_search_customer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tìm Kiếm"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/green_primary_button"
+                    app:cornerRadius="8dp"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3: Thông tin khách hàng -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_customer_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_search_customer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin khách hàng"
+                    android:textColor="@color/green_text_dark"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <!-- Left Column: Customer Details 1 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Họ và tên:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <EditText
+                            android:id="@+id/edt_customer_full_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:padding="8dp"
+                            android:background="@drawable/edittext_border_green"
+                            android:layout_marginBottom="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thẻ căn cước / CMND:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <EditText
+                            android:id="@+id/edt_customer_id_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:background="@drawable/edittext_border_green"
+                            android:layout_marginBottom="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loại khách hàng:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <Spinner
+                            android:id="@+id/spinner_customer_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/spinner_background_green"
+                            android:paddingVertical="8dp"
+                            android:layout_marginBottom="12dp"
+                            android:entries="@array/customer_types"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Số điện thoại:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <EditText
+                            android:id="@+id/edt_customer_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:padding="8dp"
+                            android:background="@drawable/edittext_border_green"/>
+
+                    </LinearLayout>
+
+                    <!-- Right Column: Customer Details 2 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ngày sinh:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <LinearLayout
+                            android:id="@+id/layout_customer_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/edittext_border_green"
+                            android:paddingVertical="8dp"
+                            android:layout_marginBottom="12dp">
+                            <TextView
+                                android:id="@+id/tv_customer_dob"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/green_text_dark"
+                                android:textSize="16sp"
+                                android:layout_marginStart="4dp"/>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/btn_2"
+                                android:contentDescription="Select Customer Date of Birth"
+                                android:layout_marginEnd="4dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Địa chỉ:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <EditText
+                            android:id="@+id/edt_customer_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPostalAddress"
+                            android:padding="8dp"
+                            android:background="@drawable/edittext_border_green"
+                            android:layout_marginBottom="12dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Giới tính:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <Spinner
+                            android:id="@+id/spinner_customer_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/spinner_background_green"
+                            android:paddingVertical="8dp"
+                            android:layout_marginBottom="12dp"
+                            android:entries="@array/genders"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quốc tịch:"
+                            android:textColor="@color/text_dark_gray"
+                            android:textSize="14sp"/>
+                        <Spinner
+                            android:id="@+id/spinner_customer_nationality"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dropdown"
+                            android:background="@drawable/spinner_background_green"
+                            android:paddingVertical="8dp"
+                            android:entries="@array/nationalities"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 4: Chức năng -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_functions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_customer_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center_horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkbox_move_to_checkin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chuyển đến nhận phòng"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"
+                    android:buttonTint="@color/green_primary_button"/>
+
+                <Button
+                    android:id="@+id/btn_book_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đặt Phòng"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/green_primary_button"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_cancel_booking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hủy"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/red_button"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_close"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đóng"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/gray_button"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

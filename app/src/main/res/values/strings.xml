@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ... các string-array đã có (employee_types, room_types, customer_types, genders, nationalities) ... -->
+
+    <string-array name="payment_methods">
+        <item>Tiền mặt</item>
+        <item>Chuyển khoản</item>
+        <item>Thẻ tín dụng</item>
+        <item>Ví điện tử</item>
+    </string-array>
+
+    <string-array name="payment_statuses">
+        <item>Chưa thanh toán</item>
+        <item>Đã thanh toán một phần</item>
+        <item>Đã thanh toán đầy đủ</item>
+        <item>Đã hủy</item>
+    </string-array>
+</resources>

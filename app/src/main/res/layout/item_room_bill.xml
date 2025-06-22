@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp"
+    android:weightSum="10"
+    android:background="@drawable/item_border_bottom"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tv_bill_room_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="Phòng 208"/>
+
+    <TextView
+        android:id="@+id/tv_bill_unit_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="10.000.000 đ"/>
+
+    <TextView
+        android:id="@+id/tv_bill_check_in_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="5/16/2018"/>
+
+    <TextView
+        android:id="@+id/tv_bill_check_out_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:textColor="@color/text_dark_gray"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="5/17/2018"/>
+
+    <TextView
+        android:id="@+id/tv_bill_total_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:textColor="@color/green_text_dark"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="10.000.000 đ"/>
+
+</LinearLayout>

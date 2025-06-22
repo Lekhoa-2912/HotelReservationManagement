@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background_light">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Header Section -->
+        <TextView
+            android:id="@+id/tv_invoice_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hóa Đơn Thanh Toán"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:textColor="@color/green_text_dark"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Card 1: Thông tin chung về Hóa Đơn và Đặt Phòng -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_invoice_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_invoice_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin chi tiết hóa đơn"
+                    android:textColor="@color/green_text_dark"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Mã hóa đơn -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mã hóa đơn:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_invoice_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="HD123456789"/>
+
+                <!-- Ngày lập hóa đơn -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày lập hóa đơn:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_invoice_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="21/06/2025"/>
+
+                <!-- Tên nhân viên -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tên nhân viên:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_employee_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="Nguyễn Thị B"/>
+
+                <!-- Tên khách hàng -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tên khách hàng:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_customer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="Trần Văn C"/>
+
+                <!-- Số phòng -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số phòng:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_room_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="Phòng 206 (Deluxe)"/>
+
+                <!-- Ngày nhận phòng (Ngày thuê phòng) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày nhận phòng:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_check_in_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="18/06/2025"/>
+
+                <!-- Ngày trả phòng -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ngày trả phòng:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_check_out_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="21/06/2025"/>
+
+                <!-- Tổng số đêm -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng số đêm:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_total_nights"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="3 đêm"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2: Chi tiết các khoản phí -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_charges_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_invoice_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chi tiết các khoản phí"
+                    android:textColor="@color/green_text_dark"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Tiền phòng -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tiền phòng:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_room_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="3.000.000 ₫"/>
+
+                <!-- Tổng tiền dịch vụ -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng tiền dịch vụ:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_service_charge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="500.000 ₫"/>
+
+                <!-- Giảm giá / Khuyến mãi -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giảm giá / Khuyến mãi:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_discount_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="- 100.000 ₫"/>
+
+                <!-- Thuế (VAT/Service Charge) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thuế (VAT/Phí dịch vụ):"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tv_tax_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:textColor="@color/green_text_dark"
+                    android:textSize="16sp"
+                    tools:text="350.000 ₫"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 3: Tổng tiền & Thanh toán -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_total_payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_charges_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng cộng &amp; Thanh toán"
+                    android:textColor="@color/green_text_dark"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Tổng tiền phải trả -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng tiền phải trả:"
+                    android:textColor="@color/green_text_dark"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_grand_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_border_green"
+                    android:layout_marginBottom="12dp"
+                    tools:text="3.750.000 ₫"
+                    android:textStyle="bold"
+                    android:textColor="@color/red_button"
+                    android:textSize="18sp"/>
+
+                <!-- Phương thức thanh toán -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phương thức thanh toán:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <Spinner
+                    android:id="@+id/spinner_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/spinner_background_green"
+                    android:paddingVertical="8dp"
+                    android:layout_marginBottom="12dp"
+                    android:entries="@array/payment_methods"/>
+
+                <!-- Trạng thái thanh toán -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái thanh toán:"
+                    android:textColor="@color/text_dark_gray"
+                    android:textSize="14sp"/>
+                <Spinner
+                    android:id="@+id/spinner_payment_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/spinner_background_green"
+                    android:paddingVertical="8dp"
+                    android:entries="@array/payment_statuses"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 4: Các nút chức năng -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_functions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_total_payment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btn_print_invoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="In Hóa Đơn"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/green_primary_button"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_process_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh Toán"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/green_primary_button"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:id="@+id/btn_close_invoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đóng"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/gray_button"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

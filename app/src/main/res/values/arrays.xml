@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Mảng cho loại nhân viên -->
+    <string-array name="employee_types">
+        <item>Nhân viên toàn thời gian</item>
+        <item>Nhân viên bán thời gian</item>
+        <item>Thực tập sinh</item>
+        <item>Cộng tác viên</item>
+    </string-array>
+
+    <!-- Mảng cho loại phòng (Đã gộp và loại bỏ trùng lặp) -->
+    <string-array name="room_types">
+        <item>Phòng Suite (SUT)</item>
+        <item>Phòng Deluxe (DLX)</item>
+        <item>Phòng Standard (STD)</item>
+        <item>Phòng Tổng thống (PRES)</item>
+        <!--
+            Đã loại bỏ các mục trùng lặp hoặc không mong muốn như "Phòng Đơn (SNGL)"
+            và "Phòng Đôi (DBL)" nếu "Standard", "Deluxe", "Suite" đã bao hàm ý nghĩa đó.
+            Nếu bạn muốn giữ chúng, hãy thêm lại vào đây.
+        -->
+        <item>Phòng Đơn (SNGL)</item>
+        <item>Phòng Đôi (DBL)</item>
+    </string-array>
+
+    <!-- Mảng cho số phòng (Đã gộp và loại bỏ trùng lặp) -->
+    <string-array name="room_numbers">
+        <item>Phòng 101</item>
+        <item>Phòng 102</item>
+        <item>Phòng 105</item>
+        <item>Phòng 201</item>
+        <item>Phòng 203</item>
+    </string-array>
+
+    <string-array name="customer_types">
+        <item>Khách du lịch</item>
+        <item>Khách công tác</item>
+        <item>Khách hàng thân thiết</item>
+    </string-array>
+
+    <!-- Mảng cho quốc tịch -->
+    <string-array name="nationalities">
+        <item>Việt Nam</item>
+        <item>Hoa Kỳ</item>
+        <item>Trung Quốc</item>
+        <item>Hàn Quốc</item>
+        <item>Nhật Bản</item>
+        <item>Khác</item>
+    </string-array>
+
+    <!-- Bạn cũng có thể thêm string resource cho tên ứng dụng ở đây -->
+    <string name="app_name" translatable="false">Hotel Booking App</string>
+
+</resources>

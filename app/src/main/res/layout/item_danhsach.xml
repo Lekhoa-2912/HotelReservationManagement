@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp"
+    android:background="@drawable/item_border_bottom"
+    android:weightSum="6"> <!-- Tổng trọng số của các cột, giống header -->
+
+    <!-- Cột 1: Mã (Mã nhận phòng / Mã đặt phòng) -->
+    <TextView
+        android:id="@+id/tv_id_column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/green_text_dark"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        tools:text="35"/>
+
+    <!-- Cột 2: Họ và tên khách hàng -->
+    <TextView
+        android:id="@+id/tv_customer_name_column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/green_text_dark"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        tools:text="Nguyễn Duy Cương"/>
+
+    <!-- Cột 3: CMND -->
+    <TextView
+        android:id="@+id/tv_cmnd_column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/green_text_dark"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        tools:text="16520147"/>
+
+    <!-- Cột 4: Tên phòng / Loại phòng -->
+    <TextView
+        android:id="@+id/tv_room_info_column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/green_text_dark"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        tools:text="Phòng 206"/>
+
+    <!-- Cột 5: Ngày nhận -->
+    <TextView
+        android:id="@+id/tv_check_in_date_column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/green_text_dark"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        tools:text="5/23/2018"/>
+
+    <!-- Cột 6: Ngày trả -->
+    <TextView
+        android:id="@+id/tv_check_out_date_column"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/green_text_dark"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        tools:text="5/24/2018"/>
+
+</LinearLayout>
